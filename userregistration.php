@@ -3,9 +3,6 @@ add  What should I know before I start fundraising on gofunding
 add footer
 validation all input field -->
 
-<?php
-include('dbconnection.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +14,8 @@ include('dbconnection.php');
   <link rel="stylesheet" type="text/css" href="css/logindesign.css">
 </head>
 <body>
-  <form action="signup-check.php" method="post">
-     	<h2>SIGN UP</h2>
+  <form action="dbvalid/userregistrationvalid.php" method="POST">
+     	<h2 class="text-center">Create an Account</h2>
        <label>Name</label>
      	<input type="text" 
                  name="Name" 
@@ -28,15 +25,15 @@ include('dbconnection.php');
                  name="Email" 
                  placeholder="Enter your email"><br>
 
-          <label>Re Password</label>
+          <label>Password</label>
           <input type="password" 
                  name="Password" 
-                 placeholder="Enter your password"><br>
-
-     	<button type="submit">Sign Up</button>
-          <a href="index.php" class="ca">Already have an account?</a>
-          <button type="submit">Sign Up</button>
+                 placeholder="Enter your password">
+ 
+          <button type="submit" class="btn btn-danger mt-4 btn-block shadow-sm font-weight-bold" name="Signup">Sign Up</button>
           <a href="user/userlogin.php" class="ca">Already have an account?</a>
+          
+         
      </form>
   
   <!-- <div class="container pt-5" id="registration">
