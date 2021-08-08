@@ -1,7 +1,11 @@
 <!-- check this sesion  -->
 
 <?php
+define('TITLE', 'profile');
+define('PAGE', 'userprofile');
+include('include/header.php');
 include('../dbconnection.php');
+
 session_start();
 if($_SESSION['is_login']){
     $rEmail=$_SESSION['rEmail'];
@@ -33,77 +37,6 @@ if(isset($_REQUEST['nameupdate'])){
 ?>
 <!-- End check this season -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekhane change kora lagbe</title>
-     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-
-    <!-- font awesome CSS-->
-    <link rel="stylesheet" href="../css/all.min.css">
-
-    <!-- Custom CSS-->
-    <link rel="stylesheet" href="custom.css">
-</head>
-<body>
-
-<!-- Remove top navbar and add dynamic header -->
-<!-- Top Navbar -->
-<nav class="navbar navbar-dark fixed-top bg-success flex-md-nowrap p-0 shadow"><a class="navbar-brand col-sm-e col-md-2 mr-0" href="userprofile.php">GoFunding</a></nav>
-<!-- Top Navbar EEnd -->
-
-<!-- start container -->
-<div class="container-fluid" style="margin-top:40px;">
-<!-- start row -->
-    <div class="row">
-        <!-- start side bar 1st column -->
-        <nav class="col-sm-3 sidebar py-5 bg-light">
-            <div class="sidebar-sticky">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link" href="userprofile.php">
-                        <i class="fas fa-user"></i>
-                        Profile
-                    </a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="userprofile.php">
-                        <i class="fas fa-user"></i>
-                        Profile
-                    </a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-accessible-icon"></i>
-                        Funding Request
-                    </a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-align center"></i>
-                        Service Status
-                    </a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-key"></i>
-                        Change Password
-                    </a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="#">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                    </a>
-                </li>
-            </ul>
-            </div>
-        </nav>
-        <!-- end side nav 1st column -->
         <!-- start profile area -->
         <div class="col-sm-6" style="margin-top:40px"> 
             <form action="" method="post">
@@ -120,20 +53,10 @@ if(isset($_REQUEST['nameupdate'])){
                     if(isset($passmsg)){
                         echo '<br>'.$passmsg;
                     }
-                ?>
+                ?>               
             </form>
         </div>
         <!-- End profile area -->
-    </div>
-    <!-- End row -->
-</div>
-<!-- end container -->
-
-<!-- javascript -->
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/all.min.js"></script>
-
-</body>
-</html>
+    <?php
+        include('include/footer.php');
+    ?>
